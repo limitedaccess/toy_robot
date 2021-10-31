@@ -8,6 +8,11 @@ This program is tested with Python3.7 and Python3.8 on Linux and Mac OS.
 This program can be run via command line
 ```
 python main.py
+
+PLACE 0,0,NORTH
+MOVE
+...<OTHER COMMAND>
+<empty command to exit the program>
 ```
 
 And type in the correct commands listed above
