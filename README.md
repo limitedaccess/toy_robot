@@ -3,6 +3,15 @@
 ## Running Environment
 This program is tested with Python3.7 and Python3.8 on Linux and Mac OS.
 
+## Game instructions
+This program simulates a robot movement on a 5x5 unit board, and accepts the following commands:
+```
+PLACE <x>.<y>.<direction>
+MOVE
+LEFT
+RIGHT
+REPORT
+```
 
 ## How to run this program
 This program can be run via command line
@@ -28,6 +37,8 @@ Please install `tox` using `pip install tox` , and run the test via following co
 ```
 tox
 ```
+
+Test report:
 
 ```
 collected 38 items

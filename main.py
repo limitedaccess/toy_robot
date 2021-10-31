@@ -49,7 +49,7 @@ class Game:
         elif command == COMMAND_RIGHT:
             self.robot.turn_right()
         elif command == COMMAND_REPORT:
-            print(self.robot.report_location())
+            print('Output: ' + self.robot.report_location())
         else:
             raise InvalidCommand()
 

@@ -28,12 +28,12 @@ def test_game_invalid_command(command, expected, mocker, mock_robot):
 
 
 @pytest.mark.parametrize("init_command, command,expected", [
-    ('PLACE 0,0,WEST', "REPORT", "Output: 0,0,WEST"), 
+    ('PLACE 0,0,WEST', "REPORT", "0,0,WEST"), 
     ('PLACE 0,0,WEST', "MOVE", InvalidMove), 
     ('PLACE 4,0,EAST', "MOVE", InvalidMove),
     ('PLACE 4,0,EAST', "MOVE", InvalidMove), 
-    ('PLACE 2,2,EAST', "RIGHT", "Output: 2,2,SOUTH"),
-    ('PLACE 2,2,EAST', "LEFT", "Output: 2,2,NORTH"),
+    ('PLACE 2,2,EAST', "RIGHT", "2,2,SOUTH"),
+    ('PLACE 2,2,EAST', "LEFT", "2,2,NORTH"),
 ])
 def test_game_command(init_command, command, expected):
     game = Game()

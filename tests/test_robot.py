@@ -1,4 +1,5 @@
-from robot import Robot, InvalidMove
+from robot import Robot
+from exceptions import InvalidMove
 import pytest
 
 
@@ -27,13 +28,13 @@ def test_robot_place(x, y, facing, expected):
 
 @pytest.mark.parametrize("x,y,facing,expected", [
     ('0', '0', 'WEST', InvalidMove), 
-    ('1', '2', 'WEST', 'Output: 0,2,WEST'), 
+    ('1', '2', 'WEST', '0,2,WEST'), 
     ('4', '2', 'EAST', InvalidMove), 
-    ('2', '2', 'EAST', 'Output: 3,2,EAST'), 
+    ('2', '2', 'EAST', '3,2,EAST'), 
     ('2', '0', 'SOUTH', InvalidMove), 
-    ('2', '1', 'SOUTH', 'Output: 2,0,SOUTH'), 
+    ('2', '1', 'SOUTH', '2,0,SOUTH'), 
     ('2', '4', 'NORTH', InvalidMove), 
-    ('2', '1', 'NORTH', 'Output: 2,2,NORTH'), 
+    ('2', '1', 'NORTH', '2,2,NORTH'), 
 ])
 def test_robot_move(x, y, facing, expected):
     robot = Robot()
@@ -46,10 +47,10 @@ def test_robot_move(x, y, facing, expected):
         assert robot.report_location() == expected
 
 @pytest.mark.parametrize("x,y,facing,expected", [
-    ('1', '2', 'WEST', 'Output: 1,2,SOUTH'), 
-    ('2', '2', 'EAST', 'Output: 2,2,NORTH'), 
-    ('2', '1', 'SOUTH', 'Output: 2,1,EAST'), 
-    ('2', '1', 'NORTH', 'Output: 2,1,WEST'), 
+    ('1', '2', 'WEST', '1,2,SOUTH'), 
+    ('2', '2', 'EAST', '2,2,NORTH'), 
+    ('2', '1', 'SOUTH', '2,1,EAST'), 
+    ('2', '1', 'NORTH', '2,1,WEST'), 
 ])
 def test_robot_turn_left(x, y, facing, expected):
     robot = Robot()
@@ -58,10 +59,10 @@ def test_robot_turn_left(x, y, facing, expected):
     assert robot.report_location() == expected
 
 @pytest.mark.parametrize("x,y,facing,expected", [
-    ('1', '2', 'WEST', 'Output: 1,2,NORTH'), 
-    ('2', '2', 'EAST', 'Output: 2,2,SOUTH'), 
-    ('2', '1', 'SOUTH', 'Output: 2,1,WEST'), 
-    ('2', '1', 'NORTH', 'Output: 2,1,EAST'), 
+    ('1', '2', 'WEST', '1,2,NORTH'), 
+    ('2', '2', 'EAST', '2,2,SOUTH'), 
+    ('2', '1', 'SOUTH', '2,1,WEST'), 
+    ('2', '1', 'NORTH', '2,1,EAST'), 
 ])
 def test_robot_turn_right(x, y, facing, expected):
     robot = Robot()

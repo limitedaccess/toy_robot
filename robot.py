@@ -92,4 +92,4 @@ class Robot:
     def report_location(self):
         if not self.in_board():
             raise InvalidMove()
-        return f'Output: {self.pos_x},{self.pos_y},{self.facing}'
+        return f'{self.pos_x},{self.pos_y},{self.facing}'
