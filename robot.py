@@ -1,6 +1,5 @@
 from exceptions import InvalidMove
 
-
 MAX_X = 4
 MAX_Y = 4
 NORTH = 'NORTH'
@@ -60,12 +59,10 @@ class Robot:
             if self.pos_x == MAX_X:
                 raise InvalidMove()
             self.pos_x += 1
-        elif self.facing == WEST:
+        else:
             if self.pos_x == 0:
                 raise InvalidMove()
             self.pos_x -= 1
-        else:
-            raise InvalidMove()
 
     def turn_left(self):
         if not self.in_board():
@@ -95,6 +92,4 @@ class Robot:
     def report_location(self):
         if not self.in_board():
             raise InvalidMove()
-        print(f'Output: {self.pos_x},{self.pos_y},{self.facing}')
-
-
+        return f'Output: {self.pos_x},{self.pos_y},{self.facing}'

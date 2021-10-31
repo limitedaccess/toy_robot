@@ -1,6 +1,5 @@
 from robot import Robot
-from exceptions import InvalidCommand, InvalidMove, ToyRobotException
-
+from exceptions import InvalidCommand, ToyRobotException
 
 COMMAND_PLACE = 'PLACE'
 COMMAND_MOVE = 'MOVE'
@@ -27,7 +26,6 @@ class Game:
                 try:
                     self.parse_command(line)
                 except ToyRobotException as e:
-                    print(e)
                     continue
             except EOFError:
                 break
@@ -51,7 +49,7 @@ class Game:
         elif command == COMMAND_RIGHT:
             self.robot.turn_right()
         elif command == COMMAND_REPORT:
-            self.robot.report_location()
+            print(self.robot.report_location())
         else:
             raise InvalidCommand()
 
