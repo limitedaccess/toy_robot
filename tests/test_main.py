@@ -44,3 +44,22 @@ def test_game_command(init_command, command, expected):
     else:
         game.parse_command(command)
         assert game.robot.report_location() == expected
+
+
+def test_game_play(monkeypatch, capfd):
+    expected_output = 'Output: 3,3,NORTH\n'
+    commands = iter([
+        'PLACE 1,2,EAST',
+        'MOVE',
+        'MOVE',
+        'LEFT',
+        'MOVE',
+        'REPORT',
+        ''
+    ])
+    monkeypatch.setattr('builtins.input', lambda: next(commands))
+    game = Game()
+    game.start()
+    out, err = capfd.readouterr()
+    assert out == expected_output
+

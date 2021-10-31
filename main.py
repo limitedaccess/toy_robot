@@ -54,5 +54,5 @@ class Game:
             raise InvalidCommand()
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma: no cover
     Game().start()

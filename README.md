@@ -41,25 +41,25 @@ tox
 Test report:
 
 ```
-collected 38 items
+collected 39 items
 
-tests/test_main.py ............                                                                                                              [ 31%]
+tests/test_main.py .............                                                                                                             [ 33%]
 tests/test_robot.py ..........................                                                                                               [100%]
 
 ---------- coverage: platform darwin, python 3.7.5-final-0 -----------
 Name                  Stmts   Miss  Cover
 -----------------------------------------
 exceptions.py             6      0   100%
-main.py                  45     12    73%
+main.py                  43      4    91%
 robot.py                 72      4    94%
 tests/__init__.py         0      0   100%
-tests/test_main.py       22      0   100%
-tests/test_robot.py      28      0   100%
+tests/test_main.py       30      0   100%
+tests/test_robot.py      29      0   100%
 -----------------------------------------
-TOTAL                   173     16    91%
+TOTAL                   180      8    96%
 
 
-================================================================ 38 passed in 0.22s ================================================================
+================================================================ 39 passed in 0.24s ================================================================
 _____________________________________________________________________ summary ______________________________________________________________________
   python: commands succeeded
   congratulations :)
